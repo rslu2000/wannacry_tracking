@@ -27,10 +27,14 @@ total = float(n1.text.replace(' BTC','')) + float(n2.text.replace(' BTC','')) + 
 ts=int(t1.text)+int(t2.text)+int(t3.text)
 print 'WannaCry total received =', total, 'BTC'
 print 'WannaCry total received =', total*1750, 'USD' , '(in the rate 1BTC=1750 USD)'
-print 'WannaCry total received =', total*1750*30.2, 'USD' , '(in the rate 1USD=30.2 TWD)'
+print 'WannaCry total received =', total*1750*30.2, 'NT' , '(in the rate 1USD=30.2 TWD)'
 print 'WannaCry average received =', total/ts, 'BTC'
+print 'WannaCry average received =', (total/ts)*1750, 'USD'
+print 'WannaCry average received =', (total/ts)*1750*30.2, 'NT'
 
 print '勒索軟體WannaCry總共收到贖款共 =', total, '比特幣'
 print '勒索軟體WannaCry總共收到贖款共：', total*1750, '美元' , '(以1比特幣=1750美元換算)'
 print '勒索軟體WannaCry總共收到贖款共：', total*1750*30.2, '新台幣' , '(以1美元=30.2新台幣換算)'
 print '勒索軟體WannaCry平均贖款 =', total/ts, '比特幣'
+print '勒索軟體WannaCry平均贖款 =', (total/ts)*1750, '美元'
+print '勒索軟體WannaCry平均贖款 =', (total/ts)*1750*30.2, '新台幣'
