@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import requests
 import time
-print 'Taiwan local time:', time.ctime()
-print ''
+print "Taiwan local time:", time.ctime()
+print ""
 from bs4 import BeautifulSoup
 res1 = requests.get("https://blockchain.info/address/115p7UMMngoj1pMvkpHijcRdfJNXj6LrLn")
 res2= requests.get("https://blockchain.info/address/12t9YDPgwueZ9NyMgw519p7AA8isjr6SMw")
@@ -34,6 +34,7 @@ print 'WannaCry average received per transaction =', total/ts, 'BTC'
 print 'WannaCry average received per transaction =', (total/ts)*1750, 'USD'
 print 'WannaCry average received per transaction =', (total/ts)*1750*30.2, 'NT'
 print ''
+print '台灣本地時間:', time.ctime()
 print '勒索軟體WannaCry總共收到贖款共 =', total, '比特幣'
 print '勒索軟體WannaCry總共收到贖款共：', total*1750, '美元' , '(以1比特幣=1750美元換算)'
 print '勒索軟體WannaCry總共收到贖款共：', total*1750*30.2, '新台幣' , '(以1美元=30.2新台幣換算)'
