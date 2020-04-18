@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# https://repl.it/repls/LowestUnwelcomeCharacterencoding
 import requests
 import time
 print 'Taiwan local time:', time.ctime()
@@ -9,13 +10,14 @@ res3= requests.get("https://blockchain.info/address/13AM4VW2dhxYgXeQepoHkHSQuy6N
 soup1=BeautifulSoup(res1.text,"html5lib")
 soup2=BeautifulSoup(res2.text,"html5lib")
 soup3=BeautifulSoup(res3.text,"html5lib")
-for n1 in soup1.select("#total_received"):
-     print 'WannaCry Account_01 = ',n1.text
-for n2 in soup2.select("#total_received"):
-     print 'WannaCry Account_02 = ',n2.text
-for n3 in soup3.select("#total_received"):
-     print 'WannaCry Account_03 = ',n3.text
-total = float(n1.text.replace(' BTC','')) + float(n2.text.replace(' BTC','')) + float(n3.text.replace(' BTC',''))
+element1= soup1.select('[class="sc-8sty72-0 cyLejs"] [class="sc-1ryi78w-0 bFGdFC sc-16b9dsl-1 iIOvXh u3ufsr-0 gXDEBk"]')[2]
+print 'WannaCry Account_01 = ',element1.text
+element2= soup2.select('[class="sc-8sty72-0 cyLejs"] [class="sc-1ryi78w-0 bFGdFC sc-16b9dsl-1 iIOvXh u3ufsr-0 gXDEBk"]')[2]
+print 'WannaCry Account_02 = ',element2.text
+element3= soup3.select('[class="sc-8sty72-0 cyLejs"] [class="sc-1ryi78w-0 bFGdFC sc-16b9dsl-1 iIOvXh u3ufsr-0 gXDEBk"]')[2]
+print 'WannaCry Account_03 = ',element3.text
+
+total = float(element1.text.replace(' BTC','')) + float(element2.text.replace(' BTC','')) + float(element3.text.replace(' BTC',''))
 print 'WannaCry total received =', total, 'BTC'
 print 'WannaCry total received =', total*1750, 'USD' , '(in the rate 1BTC=1750 USD)'
 print 'WannaCry total received =', total*1750*30.2, 'USD' , '(in the rate 1USD=30.2 TWD)'
